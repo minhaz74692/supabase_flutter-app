@@ -3,11 +3,11 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
-   await dotenv.load(fileName: ".env");
+   await dotenv.load();
   await Supabase.initialize(
     url: 'https://rwxiaztkwzestzrgpdug.supabase.co',
-    anonKey:
-        dotenv.env['SUPABAEKEY']??'',
+    anonKey: dotenv.env['SUPABAEKEY'] ?? '',
+    // 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ3eGlhenRrd3plc3R6cmdwZHVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTg2NDUwODcsImV4cCI6MjAzNDIyMTA4N30.SpL-q92aGXyGi1AZWH29N9QQLiFxRnpKPvsj99uC0mo',
   );
   runApp(MyApp());
 }
